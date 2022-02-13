@@ -16,3 +16,32 @@ function generatePin(){
     document.getElementById('display-pin').value = pin; /// akhen show korbe
    
 }
+
+///
+
+document.getElementById('key-pad').addEventListener('click', function(event){
+    const number = event.target.innerText; // value gulo show korbe ... 1,2,3....
+    const calcInput = document.getElementById('typed-numbers'); // input field calling
+    // jodi number na hoy....
+    if(isNaN(number)){
+    if(number =='C'){ 
+    calcInput.value = '';
+}
+    }
+    else{
+    const previousNumber = calcInput.value; // show korbe
+    const newNumber = previousNumber + number; // 12 evabe asbe..
+    calcInput.value = newNumber; // number value store here
+    }
+
+});
+
+function verifyPin(){
+    const pin = document.getElementById('display-pin').value;
+    const typedNumber = document.getElementById('typed-numbers').value;
+    if(pin ==typedNumber){
+        console.log('match.yYA');
+    } else{
+        console.log('oh');
+    }
+}
